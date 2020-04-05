@@ -13,7 +13,10 @@ class PokeAPI(object):
         data = r.json()
 
         return {
+            'pokedex': data.get('id'),            
             'name': data.get('name'),
+            'height': data.get('height'),
+            'weight': data.get('weight'),
             'image': data.get('sprites', {}).get('front_default'),
         }
 
